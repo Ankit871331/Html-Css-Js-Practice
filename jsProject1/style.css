@@ -1,0 +1,48 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+
+    background-color: black;
+    color: white ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: row;
+    height:100%;
+    width: 100%;
+}
+
+.box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.number{
+    font-size: 13rem;
+}
+
+.elements{
+    display: flex;
+    gap: 2rem;
+}
+
+.plus, .minus, .reset{
+    border: 2px solid #ffffff;
+    padding: 19px 50px;
+    font-size: 2rem;
+    border-radius: 20px;
+    transition: 0.2s ease-in;
+}
+
+.plus:hover, .minus:hover, .reset:hover{
+    color: black;
+    background-color: white;
+    font-weight: bold;
+}
