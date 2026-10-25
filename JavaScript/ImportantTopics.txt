@@ -1,0 +1,317 @@
+==========================================================JavaScript Basics===============================================================
+
+
+
+1. Keywords --> Reserved word that have spacial meaning and can not be used in class, 
+function and variable for example break, case, catch, class, const, continue, debugger,
+ default, delete, do, else, export, extends, finally, for, function, if, import, in, instanceof, 
+let, new, return, super, switch, this, throw, try, typeof, var, void, while, with, yield, enum,
+ implements, interface, package, private, protected, public, static, await
+
+
+
+2.Identifiers --> giving name to something like let name = "Ankit", so here is name is identifiers
+
+3. DataTypes --> JavaScript have 8 data types String , Number, BigInt(let bigNumber = 12345678901234567890n;), Boolean, Undefined(Undefined),
+Null, Symbol(let id = Symbol("id");),  Object, 
+Premitive DataType(Primitive data types are immutable and represent a single value. JavaScript has 7 primitive data types: String, Number, BigInt, Boolean, Undefined, Null, and Symbol.) --> String ,Number,BigInt,Boolean,Undefined,Null,Symbol
+Non-Premitive(Non-primitive data types are reference types that can store collections or more complex data. In JavaScript, Objects are non-primitive, including arrays and functions.)--> Object
+
+
+4. variable & constants
+let -> 
+var -> 
+const -> can not re-asign same value again, can not update value
+
+
+
+5. Tokens
+Tokens are the smallest individual units of a JavaScript program that have meaning to the JavaScript engine. The JavaScript code is broken down into tokens before it is processed.
+for Example: let age = 25;
+let    → Keyword
+age    → Identifier
+=      → Operator
+25     → Number/Literal
+;      → Punctuation
+
+
+6. Operators
+Operators are special symbols or keywords used to perform operations on values or variables. For example, + is used for addition, = is used for assignment, and === is used for strict comparison.
+a.Arithmetic operators-->+   -   *   /   %   **   ++   --
+b. Assignment operators --> =   +=   -=   *=   /=   %=   **=
+c. Comparison operators --> ==   ===   !=   !==   >   <   >=   <=
+d. Logical operators --> &&   ||   !
+e.  Ternary operator--> ? :
+f. Type operators --> typeof,instanceof
+g. Other important operators--> delete,in,new,void
+
+
+==========================================================JavaScript Descision making statement=================================================
+
+Conditional statement
+
+1. if, else if, nested if else, if else if ladder, switch case
+
+2. Dynamic data / Dynamic typing ->  In JavaScript, variables are dynamically typed. This means you don't have to specify the data type when declaring a variable, and the same variable can hold different types of values.
+for exmaple --> 
+let value = 10;        // Number
+value = "Hello";       // String
+value = true;          // Boolean
+
+
+3. Static typing--> In a statically typed language, the type is generally specified or determined at compile time, and a variable cannot freely change to an unrelated type.
+for exmaple: let age: 
+number = 25;
+age = "Hello"; // ❌ Error
+
+
+4. Template literals --> Template literals are a way to create strings using backticks ( ). They allow us to easily insert variables and expressions directly inside a string using ${}. They also support multi-line strings.
+for exmaple: --> let message = `My name is ${name} and I am ${age} years old.`;
+
+
+5. Type Casting --> meaning converting one data type ot another
+let newAge = Number(age);
+a. Explicit Type Casting --> convernting manually let value = "100";,umber(value);   // String → Number,String(100);     // Number → String,Boolean(1);      // Number → Boolean
+
+b.Implicit Type Conversio --> JavaScript automatically converts the type. 
+for example: let result = "10" + 5; onsole.log(result); -->"105" converted into number to string 
+
+6 Iteration statemnts or loops --> for, while, do while, 
+for in (gives the key/index) --> 
+const person = {
+    name: "John",
+    age: 25,
+    city: "Delhi"
+};
+
+for (let key in person) {
+    console.log(key);
+}
+Output gives all the key -> johan, 25, Delhi
+
+for...of → gives you the actual values
+const fruits = ["Apple", "Banana", "Mango"];
+
+for (let fruit of fruits) {
+    console.log(fruit);
+} 
+output: apple, banana , mango
+
+
+
+7. Jump statement -> continew, break
+
+=================================================== Function start ============================================================================================
+
+Function --> function is a reusable block of code design to perform a particular task .
+
+Argument/Paremeter -->   function(name) --> here name is parameter and the value of it is like "Ankit" is Argumet passed by user during call like --> function("Ankit").
+
+Default Parameter --> If no value is given to the function the function automatically use the default value.
+
+Rest Parameters (...args) --> dots(...) called rest operator , the rest operator says collect all the remaining argument and put them into one container(Array). 
+
+spread (...arr) --> It saperate value in individual. like we make function and write a for loop to add value and passing the arr in that so we need to pass like ...arr so it is called spread operator.
+
+Function declaration --> Define function using function keyword. Function declaration is hosted it means you can call it before the code written.
+Function Expression --> It is a function which is used as expression it means the it produce a value which can be assigned to a variable. In hosting Function Expression body are not hosted , only a variable declaration hosted
+
+for example: 
+    console.log(hi); undifiines
+    var hi = function(){
+        return "Hello";
+    }
+console.log(hi); hello
+
+IIFE(Immediately Invoked Function Expression) --> It is a function that is defined and execute at the same time 
+Ex: 
+(function() {
+  console.log("I run immediately!");
+})();
+
+
+
+....................................................................Types of functions: ......................................................
+1. Function Declaration 
+
+2. Function Expression
+
+3. Arrow Function --> It makes the function sorter using arrow(=>). Arrow function is different to the regular function like this , 'this' keyword that refers some object but it depend how function is called. In regular function that get this as window or undifined they do not get the outer value because regular function have its own this but the arrow function have not its own this it borrow form the outer scope. 
+- Argument = Argument is a spacial object avaliable inside regular function , it holds all the arguments passed to the function 
+    like: 
+        function test(){
+            console.log(argument)
+        }
+
+        test(1,2,3); 
+        output: Argumet(3) [1,2,3]
+
+-Argument = Arrow function do not have arguments 
+    like:
+        const test = () => {
+            console.log(arguments) ❌ReferenceError
+        }   
+        test(1,2,3)   
+
+-If need to collect Argument in the Arrow function so use rest operator 
+    like:
+        const test = (...args) => {
+        console.log(args); // [1, 2, 3]
+        };
+        test(1, 2, 3);
+
+-Arrow function can not be used as constructor because the arrow function have not its own this.
+
+-Arrow function are not hosted , we must define them before calling
+
+-----------------------------------------------------------------------------------------------------------------------
+
+4. IIFE (Immediately Invoked Function Expression) --> The function expression that immediately call after creation.
+
+- Ex: 
+        (function() {
+        console.log("I run immediately!");
+        })();
+
+ -Here first '( )' in which function is written it wrap the function and tell js it is an exception if function is written in it so it become function exception. and the last "()" tell me js to call immediately.        
+
+-There are 4 ways to write IIFE:
+    a.  given in ex
+    b. (function() {
+        console.log("Style 2");
+        }());
+    c.
+        !function() {
+        console.log("Style 3");
+        }();
+
+    d.  
+        +function() {
+        console.log("Style 4");
+        }();
+
+
+    e.
+        void function() {
+        console.log("Style 5");
+        }();
+
+    f.
+        (() => {
+        console.log("Style 6");
+        })();
+
+    g. 
+        (async () => {
+        const data = await fetch("/api");
+        console.log(data);
+        })();
+
+---------------------------------------------------------------------------------------------------------------------------
+5. Constructor Function --> It is regular js function that is used with the new keyword to create and initialize object.
+
+-Constructor means a builder that build something 
+
+------------------------------------------------------------------------------------------------------------------
+6. Callback Function --> It is function that is passed as a argument in another function.
+
+-Ex:
+        function greet(name, callback) {
+        console.log("Hello, " + name);
+        callback();
+        }
+
+        function sayBye() {
+        console.log("Goodbye!");
+        }
+
+        greet("Rahul", sayBye);
+
+        output:         
+                Hello, Rahul
+                Goodbye!
+
+
+---------------------------------------------------------------------------------------------------------------------------------
+7. Higher-Order Function --> Function that takes one or more then one function as an argument/ Function that return function.
+-EX:
+
+        function sayHello(name) {
+        return "Hello, " + name;
+        }
+
+        function greet(greetingFn, name) {
+        return greetingFn(name);
+        }
+
+        greet(sayHello, "Alice"); // "Hello, Alice"   
+
+
+
+- There are many higher order function like , sort , map, forEach, filter many more..
+
+---------------------------------------------------------------------------------------------------------------------------
+8. Generator Function = a function that can pause in the middle and resume later. 
+-A generator function is a normal function with a star after function, and it uses yield to pause.
+
+-EX:
+
+        function* myGenerator() {
+        console.log("Start");
+        yield 1;              // ← PAUSE here, hand out 1
+        console.log("Middle");
+        yield 2;              // ← PAUSE here, hand out 2
+        console.log("End");
+        return 3;             // ← finish
+        }   
+
+
+    -   to run the function 
+        gen.next();  // prints "Start", returns { value: 1, done: false }
+        gen.next();  // prints "Middle", returns { value: 2, done: false }
+        gen.next();  // prints "End",    returns { value: 3, done: true }
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------        
+
+9. Async Function
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+10. Method (function inside an object)
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+this and arguments-->
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+Anynomous function = function without name 
+
+ex:
+    const greet = function () { return "hi"; };  //anymomous arrow function 
+    const add = (a, b) => a + b;             // anynomous arrow function 
+    btn.addEventListener("click", function () { alert("hi"); });   // Anonymous callback
+setTimeout(() => console.log("later"), 1000);
+
+
+- Anynomous function is used in 
+
+Situation	                                    Anonymous function used
+Array HOFs	                                    arr.map(n => n*2), arr.filter(n => n>0)
+Event listeners	                                btn.addEventListener("click", () => {...})
+Timers	                                        setTimeout(() => {...}, 1000)
+Promises	                                    promise.then(res => res.json())
+Callbacks in Node	                            fs.readFile("f", (err, data) => {...})
+IIFE	                                        (() => { ... })()
+Returned from HOFs	                            function multiplier(x){ return y => x*y; }
+sort comparator	                                arr.sort((a,b) => a-b)
+
+
+=================================================== Function end ============================================================================================
+
+
+
+
+
+
+=========================================== Need to ask ===================================================================
+this and arguments
+

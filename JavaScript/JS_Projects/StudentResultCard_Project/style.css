@@ -1,0 +1,76 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: black;
+    color: white;
+}
+
+
+.main{
+    display: flex;
+    justify-content: center;
+    font-family: 'Times New Roman', Times, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.student_info{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10rem;
+    align-items: center;
+}
+
+.generate_mark_sheet{
+    border: 2px solid;
+    padding: 5px 10px 5px 10px;
+    transition: all 0.4s ease-in-out;
+}
+
+.generate_mark_sheet:hover{
+    color: black;
+    background-color: white;
+    font: bold;
+    cursor: pointer
+    
+}
+
+
+.subj_marks{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+
+}
+
+
+
+.marks_sheet{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 50%;
+    display: none;
+    margin-top: 2rem;
+    
+}
+
+.subj_marks_total{
+    width: 100%;
+    margin-top: 7rem;
+
+}
+
+.sheet_style{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 1rem;
+}

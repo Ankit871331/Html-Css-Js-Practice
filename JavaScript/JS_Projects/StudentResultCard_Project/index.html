@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main">
+
+        
+        <div class="student_info">
+            <h1>Enter your marks</h1>
+            <div class="subj_marks">
+                <div class="hindi">Enter your Hindi marks: <input type="number" id="hindiInput" oninput="showHindiMarks()"></div>
+                <div class="english">Enter your English marks: <input type="number" id="englishInput" oninput="showEnglishMarks()"></div>
+                <div class="maths">Enter your Maths marks: <input type="number" id="mathsInput" oninput="showMathsMarks()"></div>
+                <div class="science">Enter your Science marks: <input type="number" id="scienceInput" oninput="showScienceMarks()"></div>
+                <div class="computer">Enter your Computer marks: <input type="number" id="computerInput" oninput="showComputerMarks()"></div>
+                <div class="generate_mark_sheet" onclick="generateMarksheet()">Generate Marks Sheet</div>
+            </div>
+
+
+
+        </div>
+
+
+
+        <div class="marks_sheet">
+            <h1>Student Marks Sheet</h1>
+            <div class="subj_marks_total">
+                <div class="hindi_subj_marks sheet_style">
+                    <div class="hindi_subj">Hindi</div>
+                    <div class="hindi_marks" id="hindiMarks">100</div>
+                </div>
+
+                <div class="english_subj_marks sheet_style">
+                    <div class="english_subj">English</div>
+                    <div class="english_marks" id="englishMarks">100</div>
+                </div>
+
+                <div class="science_subj_marks sheet_style">
+                    <div class="science_subj">Science</div>
+                    <div class="science_marks" id="scienceMarks">100</div>
+                </div>
+
+                <div class="math_subj_makrs  sheet_style">
+                    <div class="maths_subj">Maths</div>
+                    <div class="maths_marks" id="mathsMarks">10</div>
+                </div>
+
+                <div class="computer_subj_marks  sheet_style">
+                    <div class="computer_subj">Computer</div>
+                    <div class="computer_marks" id="computerMarks">100</div>
+                </div>
+
+                <div class="total_marks  sheet_style">
+                    <div >Total</div>
+                    <div  id="totalMarks">100</div>
+                </div>
+
+            </div>
+
+
+
+        </div>
+    </div>
+</body>
+
+<script src="script.js"></script>
+</html>
