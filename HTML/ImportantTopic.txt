@@ -11,7 +11,34 @@
 -<sub>
 -<sup>
 -<a> = link tag, href = " "
-- 
+-
+
+======================================= List ==============================
+-<ol type="a">
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+
+-<ul type="circle">
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+
+================================================
+-<audio src=" " controls loop muted></audio>
+-<video src =" "  controls loop play muted autoplay poster ="add thumbnail like show in youtube video"></video>
+-iframe = to add map,vyoutube video , or any kind of live think form anywhere 
+
+================================= inline element (which take full line), block element(takes only teh character space) ===============================================
+
+
+================================================================== entity ==================================
+-spacila character in like @, $ to write theym , search on web entity html.
 
 
 
